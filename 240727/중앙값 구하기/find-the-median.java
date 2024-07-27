@@ -8,38 +8,25 @@ public class Main {
 
         // a가 클 때
         if (a > b) {
-            // c가 클 때
             if (c > a) {
-                // 중앙값은 a
                 System.out.println(a);
             }
-            // a가 클 때
+            else if (b > c) {
+                System.out.println(b);
+            }
             else {
-                // 중앙값은 c
                 System.out.println(c);
             }
         }
-        // b가 클 때
-        else if (b > a) {
-            // c가 클 때
-            if (c > b) {
-                // 중앙값은 b
-                System.out.println(b);
-            }
-            // b가 클 때
-            else {
-                // 중앙값은 c
+        else if (c > b) {
+            if (a > c) {
                 System.out.println(c);
             }
-        }
-        else if (a > c) {
-            if (b > a) {
-                // 중앙값은 a
-                System.out.println(a);
+            else if (b > a) {
+                System.out.println(b);
             }
             else {
-                // 중앙값은 b
-                System.out.println(b);
+                System.out.println(a);
             }
         }
 
