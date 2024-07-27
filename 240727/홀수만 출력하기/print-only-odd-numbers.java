@@ -5,12 +5,15 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        while (sc.hasNext()) {
-            int n = sc.nextInt();
-            if (n % 2 != 0 && n % 3 == 0) {
-                System.out.println(n);
+        int n = sc.nextInt();
+              
+        for (int i = 0; i < n; i++) {
+            int num = sc.nextInt();
+            if (num % 2 != 0 && num % 3 == 0) {
+                System.out.println(num);
             }
         }
+        sc.close();
     }
-    
+
 }
