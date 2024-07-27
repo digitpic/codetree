@@ -6,8 +6,8 @@ public class Main {
         int b = sc.nextInt();
         int c = sc.nextInt();
 
-        if (a > b) {
-            if (c > a) {
+        if (a >= b) {
+            if (c >= a) {
                 System.out.println(a);
             }
             else {
@@ -15,7 +15,7 @@ public class Main {
             }
         }
         else {
-            if (c > b) {
+            if (c >= b) {
                 System.out.println(b);
             }
             else {
