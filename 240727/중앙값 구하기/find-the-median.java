@@ -18,15 +18,15 @@ public class Main {
                 System.out.println(c);
             }
         }
-        else if (c > b) {
-            if (a > c) {
-                System.out.println(c);
+        else {
+            if (c > a) {
+                System.out.println(a);
             }
-            else if (b > a) {
+            else if (b < a) {
                 System.out.println(b);
             }
             else {
-                System.out.println(a);
+                System.out.println(c);
             }
         }
 
