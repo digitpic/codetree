@@ -5,11 +5,12 @@ public class Main {
         int n = sc.nextInt();
         int i = 1;
         while (true) {
+            n /= i;
             if ( n <= 1 ) {
                 System.out.println(i);
                 break;
             }
-            n /= i;
+            
             i++;
         }
         
