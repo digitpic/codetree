@@ -4,13 +4,12 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int i = 1;
-        while (n <= 1) {
-            n /= i;
+        while (true) {
             if ( n <= 1 ) {
                 System.out.println(i);
                 break;
             }
-            
+            n /= i;
             i++;
         }
         
