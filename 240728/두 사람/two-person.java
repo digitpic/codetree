@@ -7,8 +7,6 @@ public class Main {
         int a2 = sc.nextInt();
         String s2 = sc.next();
 
-
-
-        System.out.println( (a1 >= 19 || s1.equals("M")) && ( a2 >= 19 || s2.equals("M")) ? 1 : 0);
+        System.out.println( (a1 >= 19 && s1.equals("M")) || ( a2 >= 19 && s2.equals("M")) ? 1 : 0);
     }
 }
