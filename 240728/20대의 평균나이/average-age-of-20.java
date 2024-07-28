@@ -6,26 +6,20 @@ public class Main {
 
         int sum = 0, cnt = 0;
         double avg = 1;
-        int input = sc.nextInt();
 
         while (true) {
+            int input = sc.nextInt();
 
-            // 20 <= input <= 29
-            if ( input < 20 && 29 < input )
+           // 입력받은 값이 20대가 아니면 종료
+            if(input >= 30 || input <= 19) {
+                System.out.printf("%.2f", (double)sum / cnt);
                 break;
-
-            if (!sc.hasNext())
-                break;
+            }
 
             sum += input;
             cnt ++;
             
-            input = sc.nextInt();
         }
 
-        avg = (double) sum / cnt;
-
-        System.out.printf("%.2f", avg);
     }
-
 }
