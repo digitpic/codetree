@@ -4,14 +4,27 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int cnt = 0;
+        int[] arr = new int[n];
+
         for (int i = 0; i < n; i++) {
-            if (cnt == 3) {
-                break;
-            }
-            if (sc.nextInt() == 2) {
+            arr[i] = sc.nextInt();
+        }
+        
+
+        for (int i = 0; i < n; i++) {
+
+            if (arr[i] == 2) {
                 cnt++;
             }
+
+            if (cnt == 3) {
+                cnt = i+1;
+                break;
+            }
+
         }
-        System.out.println(cnt);
+
+        System.out.print(cnt);
+
     }
 }
