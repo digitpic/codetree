@@ -42,7 +42,7 @@ public class Main {
             // n = 3: 3, 1
             // 2*n - 2*i - 3
 
-            for (int j = 0; j < 2*n - 2*i - 3; j++) {
+            for (int j = 0; j < 2*(n-1) - 2*i; j++) {
                 System.out.print("*");
             }
 
