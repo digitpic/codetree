@@ -17,8 +17,8 @@ public class Main {
 
             // [1][2] 별
             // n = 3: 1, 3, 5
-            // (n - 2) + (2 * i)
-            for (int j = 0; j < (2*i) + (n-2); j++ ) {
+            // 2 * i + 1
+            for (int j = 0; j < 2*i+1; j++ ) {
                 System.out.print("*");
             }
 
@@ -33,15 +33,16 @@ public class Main {
 
             // [2][1] 공백
             // n = 3: 1, 2
-            // n-2+i
-            for (int j = 0; j < n-2+i; j++) {
+            // i+1
+            for (int j = 0; j < i+1; j++) {
                 System.out.print(" ");
             }
 
             // [2][2] 별
             // n = 3: 3, 1
-            // n - (2*i)
-            for (int j = 0; j < n-(2*i); j++) {
+            // 2*n - 2*i - 3
+
+            for (int j = 0; j < 2*n - 2*i - 3; j++) {
                 System.out.print("*");
             }
 
