@@ -9,6 +9,7 @@ public class Main {
 
             // [1] 홀수
             // 1, 2, 3
+            // n - (i - 1) / 2
             if (i % 2 == 1) {
                 for (int j = 0; j < n - (i - 1) / 2; j++) {
                     System.out.print("* ");
@@ -17,6 +18,7 @@ public class Main {
 
             // [2] 짝수
             // 3, 2, 1
+            // 1 + (i / 2)
             else {
                 for (int j = 0; j < 1 + (i / 2); j++) {
                     System.out.print("* ");
