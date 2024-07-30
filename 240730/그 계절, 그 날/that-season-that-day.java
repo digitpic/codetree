@@ -6,8 +6,9 @@ public class Main {
         if ( (y % 4 == 0 && y % 100 != 0) || (y % 400 == 0) ) {
             // 2월
             if (m == 2) {
-                if (d < 1 && 29 < d) {
+                if (d < 1 || 29 < d) {
                     System.out.println(-1);
+                    return;
                 }
             }
         }
@@ -16,23 +17,26 @@ public class Main {
         else {
             // 2월
             if (m == 2) {
-                if (d < 1 && 28 < d) {
+                if (d < 1 || 28 < d) {
                     System.out.println(-1);
+                    return;
                 }
             }
         }
 
         // 31일
         if (m == 1 || m == 3 || m == 5 || m == 7 || m == 8 || m == 10 || m == 12) {
-            if (d < 1 && 31 < d) {
+            if (d < 1 || 31 < d) {
                 System.out.println(-1);
+                return;
             }
         }
 
         // 30일
         if (m == 4 || m == 6 || m == 9 || m == 11) {
-            if (d < 1 && 30 < d) {
+            if (d < 1 || 30 < d) {
                 System.out.println(-1);
+                return;
             }
         }
 
