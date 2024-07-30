@@ -4,12 +4,13 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int m = sc.nextInt();
-        int result = 0;
-        for (int i = n; i < 100; i++) {
-            if (i % n == 0 && i % m == 0) {
-                result = i;
+        int max = Math.max(n, m);
+        int result = max;
+        for (;;) {
+            if (result % n == 0 && result % m == 0) {
                 break;
             }
+            result += max;
         }
         System.out.println(result);
     }
