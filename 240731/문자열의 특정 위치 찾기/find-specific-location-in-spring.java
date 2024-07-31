@@ -8,7 +8,7 @@ public class Main {
         int len = str.length();
         int index = -1;
 
-        for (int i=0; i<len-1; i++) {
+        for (int i=0; i<len; i++) {
             if (str.charAt(i) == word) {
                 index = i;
                 break;            
