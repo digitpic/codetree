@@ -16,9 +16,10 @@ public class Main {
             cnt++;
             if (cnt > len) {
                 cnt = -1;
+                break;
             }
         }
-        
+
         System.out.println(cnt);
 
     }
