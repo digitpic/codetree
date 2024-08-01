@@ -7,20 +7,23 @@ public class Main {
         String B = sc.next();
         
         int cnt = 0;
-
         int len = A.length();
 
-        // 같지 않을 때 반복
-        while (!A.equals(B)) {
-            A = A.substring(1) + A.substring(0, 1);
+
+        for (int i=0; i<len; i++) {
+            A = A.substring(len-1, len) + A.substring(0, len-1);
             cnt++;
-            if (cnt > len) {
-                cnt = -1;
+
+            if (A.equals(B)) {
+                System.out.println(cnt);
                 break;
             }
+            if (i == len-1) {
+                System.out.println(-1);
+                break;
+            }
+                
         }
-
-        System.out.println(cnt);
 
     }
 }
