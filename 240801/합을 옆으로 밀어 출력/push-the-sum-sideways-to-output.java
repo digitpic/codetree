@@ -14,9 +14,9 @@ public class Main {
         String str = Integer.toString(sum);
         int len = str.length();
 
-        String result = str.substring(1, len) + str.charAt(0);
+        str = str.substring(1) + str.substring(0, 1);
         
-        System.out.println(result);
+        System.out.println(str);
         
     }
 }
