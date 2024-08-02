@@ -6,21 +6,51 @@ public class Main {
         int[][] arr = new int[n][n];
         int cnt = 1;
 
-        // index 기준
-        for (int col = n-1; col >= 0; col--) {
+        // n 짝수
+        if (n % 2 == 0) {
 
-            // 짝수
-            if ( (col+1) % 2 == 0) {
-                for (int row = n-1; row >= 0; row--, cnt++) {
-                    arr[row][col] = cnt;
-                }    
-            }
-            
-            // 홀수
-            else {
-                for (int row = 0; row < n; row++, cnt++) {
-                    arr[row][col] = cnt;
+            // index 기준 반복
+            for (int col = n-1; col >= 0; col--) {
+                
+                // col 짝수
+                if ( (col + 1) % 2 == 0 ) {
+                    for (int row = n-1; row >= 0; row--, cnt++) {
+                        arr[row][col] = cnt;
+                    }
                 }
+
+                // col 홀수
+                else {
+                    for (int row = 0; row < n; row++, cnt++) {
+                        arr[row][col] = cnt;
+                    }
+                }
+                
+            }
+
+        }
+
+        // n 홀수
+        else {
+
+            // index 기준 반복
+            for (int col = n-1; col >= 0; col--) {
+                
+                // col 홀수
+                if ( (col + 1) % 2 == 1 ) {
+                    for (int row = n-1; row >= 0; row--, cnt++) {
+                        arr[row][col] = cnt;
+                    }
+                }
+
+                // col 짝수
+                else {
+                    for (int row = 0; row < n; row++, cnt++) {
+                        arr[row][col] = cnt;
+                    }
+
+                }
+                
             }
 
         }
