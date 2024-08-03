@@ -1,30 +1,26 @@
 import java.util.Scanner;
-import java.util.Set;
-import java.util.LinkedHashSet;
-public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String s = sc.next();
-        checkDuplication(s);
+
+public class Main {    
+
+    public static boolean isMoreTwoalp(String str) {
+    
+        int len = str.length();
+
+        for(int i = 0; i < len; i++)
+            if(str.charAt(0) != str.charAt(i))
+                return true;
+    
+        return false;
     }
 
-    public static void checkDuplication(String s) {
-        int len = s.length();
-        Set<Character> arr = new LinkedHashSet<Character>();
-
-        arr.add(s.charAt(0));
-
-        for (int i=1; i<len; i++) {
-            if (!arr.contains(s.charAt(i))) {
-                arr.add(s.charAt(i));
-            }
-            else {
-                System.out.println("Yes");
-                return;
-            }
-        }
-
-        System.out.println("No");
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         
+        String A = sc.next();
+
+        if(isMoreTwoalp(A))
+            System.out.print("Yes");
+        else
+            System.out.print("No");
     }
 }
