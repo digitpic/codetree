@@ -4,23 +4,37 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
         int b = sc.nextInt();
-        int[] arr = new int[2];
-        arr = fun(a, b);
-        System.out.println(arr[0] + " " + arr[1]);
+
+        IntWrapper aWrapper = new IntWrapper(a);
+        IntWrapper bWrapper = new IntWrapper(b);
+        
+        chagneNumber(aWrapper, bWrapper);
+        
+        a = aWrapper.value;
+        b = bWrapper.value;
+
+        System.out.println(a + " " + b);
     }
 
-    public static int[] fun(int a, int b) {
-        int[] arr = new int[2];
-        if (a>b) {
-            a += 25;
-            b *= 2;
+    public static void chagneNumber(IntWrapper a, IntWrapper b) {
+        
+        if (a.value > b.value) {
+            a.value += 25;
+            b.value *= 2;
         }
-        else if (a<b) {
-            a *= 2;
-            b += 25;
+        else {
+            a.value *= 2;
+            b.value += 25;
         }
-        arr[0] = a;
-        arr[1] = b;
-        return arr;
+
+        return;
+        
+    }
+}
+
+class IntWrapper {
+    int value;
+    public IntWrapper(int value) {
+        this.value = value;
     }
 }
