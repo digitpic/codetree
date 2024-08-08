@@ -14,9 +14,7 @@ public class Main {
         if (prod < 10)
             return prod;
 
-        int sum = prod % 10;
-
-        return sum + sumValue(prod / 10);
+        return prod % 10 + sumValue(prod / 10);
     }
 
 }
