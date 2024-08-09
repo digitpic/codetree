@@ -9,7 +9,6 @@ public class Main {
             numArr[i] = sc.nextInt();
 
         for (int i=0; i<n; i++) {
-            
 
             // 홀수번째 숫자 입력 받을 때
             if (i%2 == 0) {    
