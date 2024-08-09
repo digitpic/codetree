@@ -3,30 +3,25 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
 public class Main {
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        Weather[] dataArr = new Weather[n];
-        for (int i=0; i<n; i++)
-            dataArr[i] = new Weather(LocalDate.parse(sc.next()), sc.next(), sc.next());
         
-        Weather[] rainy = new Weather[n];
-        
-        int index = 0;
+        Weather result = new Weather("9999-99-99", "", "");
 
         for (int i=0; i<n; i++) {
-            if (dataArr[i].status.equals("Rain")) {
-                rainy[index++] = dataArr[i];
-            }
-        }
+            String date = sc.next();
+            String day = sc.next();
+            String status = sc.next();
 
-        Weather result = rainy[0];
-        for (int i=1; i<index; i++) {
-            long daysBetweenTarget = ChronoUnit.DAYS.between(rainy[i].date, LocalDate.now()); 
-            long daysBetweenResult = ChronoUnit.DAYS.between(result.date, LocalDate.now());
+            Weather w = new Weather(date, day, status);
 
-            if (daysBetweenResult < daysBetweenTarget) {
-                result = rainy[i];
+            if (status.equals("Rain")) {
+                // result 보다 앞선 w 가 나타난 경우
+                if (result.date.compareTo(w.date) > 0) {
+                    result = w;
+                }
             }
         }
 
@@ -36,7 +31,7 @@ public class Main {
 }
 
 class Weather {
-    LocalDate date;
+    String date;
     String day;
     String status;
 
@@ -44,7 +39,7 @@ class Weather {
 
     }
 
-    public Weather(LocalDate date, String day, String status) {
+    public Weather(String date, String day, String status) {
         this.date = date;
         this.day = day;
         this.status = status;
