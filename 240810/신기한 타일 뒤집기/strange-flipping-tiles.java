@@ -24,28 +24,46 @@ public class Main {
             
             // x 입력
             int num = sc.nextInt();
+
             // L, R 입력
-            String direction = sc.next();
+            char direction = sc.next().charAt(0);
 
             // white
-            if (direction.equals("L")) {
+            if (direction == 'L') {
 
                 // x번 반복
                 for (int j=0; j<num; j++) {   
                     tile[curIndex--] = -1;
                 }
 
+                /*
+                while (num-- > 0) {
+                    tile[curIndex] = -1;
+                    if (num > 0) curIndex--;
+                }
+                */
+
             }
 
             // black
-            else if (direction.equals("R")) {
+            else if (direction == 'R') {
 
                 // x번 반복
                 for (int j=0; j<num; j++) {   
                     tile[curIndex++] = 1;
                 }
 
+                /*
+                while (num-- > 0) {
+                    tile[curIndex] = 1;
+                    if (num > 0) curIndex++;
+                }
+                */
+
             }
+            /*
+            주석 코드 사용 시 인덱스 재조정 과정 필요 없음
+            */
 
             // 마지막 위치로 이동
             // white
