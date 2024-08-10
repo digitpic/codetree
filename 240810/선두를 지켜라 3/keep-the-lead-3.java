@@ -43,30 +43,29 @@ public class Main {
         }
 
         // 선두가 몇 번 바뀌었는지 확인
-        int cnt = 0, leader = 0;
+        int cnt = 0, lastLeader = 0, currLeader = 0;
         for (int i=1; i<indexA; i++) {
             
-            // 현재 A 가 빠른데
+            // 현재 A 가 빠른 경우
             if (posA[i] > posB[i]) {
-                // 리더가 B 라면
-                if (leader == 2)
-                    // 역전
-                    cnt++;
                 // 리더를 A 로 변경
-                leader = 1;
+                currLeader = 1;
             }
 
-            // 현재 B 가 빠른데
+            // 현재 B 가 빠른 경우
             else if(posA[i] < posB[i]) {
-                // 리더가 A 라면
-                if (leader == 1)
-                    // 역전
-                    cnt++;
                 // 리더를 B 로 변경
-                leader = 2;
+                currLeader = 2;
             }
+            // A와 B가 동일한 경우
             else if (posA[i] == posB[i]) {
+                // 둘 다 리더로 변경
+                currLeader = 3;
+            }
+
+            if (lastLeader != currLeader) {
                 cnt++;
+                lastLeader = currLeader;
             }
 
         }
