@@ -8,26 +8,29 @@ public class Main {
         int[][] board = new int[n][n];
         int[] dx = new int[]{0, 1, 0, -1};
         int[] dy = new int[]{1, 0, -1, 0};
-        int cnt = 0;
         int ans = 0;
+
+        // 배열 데이터 입력
         for (int i=0; i<n; i++) 
             for (int j=0; j<n; j++) 
                 board[i][j] = sc.nextInt();
         
         // 배열 전체 조회
         for (int i=0; i<n; i++) {
-            for (int j=0; j<n; j++) {
+            for (int j=0, cnt=0; j<n; j++, cnt=0) {
                 // 배열 각 칸마다 상하좌우 탐색
                 for (int dir=0; dir<4; dir++) {
                     int nx = i + dx[dir];
                     int ny = j + dy[dir];
-                    if (inRange(nx, ny) && board[nx][ny] == 1) cnt++;
+                    if (inRange(nx, ny) && board[nx][ny] == 1) 
+                        cnt++;
                 }
-                if (cnt >= 3) ans++;
-                cnt = 0;
+                if (cnt >= 3)
+                    ans++;
             }
         }
         
+        // 출력
         System.out.println(ans);
 
     }
