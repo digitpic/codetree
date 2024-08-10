@@ -17,7 +17,7 @@ public class Main {
         int[] tile = new int[N_MAX*X_MAX+1];
 
         // middle
-        int curIndex = 50000;
+        int curIndex = N_MAX*X_MAX/2;
         
         // n번 반복
         for (int i=0; i<n; i++) {
