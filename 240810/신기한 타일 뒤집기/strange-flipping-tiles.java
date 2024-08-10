@@ -67,12 +67,12 @@ public class Main {
 
             // 마지막 위치로 이동
             // white
-            if (direction.equals("L")) {
+            if (direction == 'L') {
                 curIndex++;
             }
 
             // black
-            else if (direction.equals("R")) {
+            else if (direction == 'R') {
                 curIndex--;
             }
 
