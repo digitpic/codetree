@@ -6,8 +6,8 @@ public class Main {
         String binary = sc.next();
 
         int num = 0;
-        for(int i = 0; i < 5; i++)
-            num = num * 2 + (binary.charAt(i) - '0');
+        for(int i = 0; i < binary.length(); i++)
+            num = num * 2 + Character.getNumericValue(binary.charAt(i));
         
         System.out.print(num);
     }
