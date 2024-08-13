@@ -3,10 +3,9 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        final int INT_MAX = Integer.MAX_VALUE;
 
         int x1, x2;
-        int maxX1, minX2 = INT_MAX;
+        int maxX1 = Integer.MIN_VALUE, minX2 = Integer.MAX_VALUE;
 
         Scanner sc = new Scanner(System.in);
 
