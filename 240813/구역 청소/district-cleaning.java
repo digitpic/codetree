@@ -12,10 +12,10 @@ public class Main {
 
         sc.close();
 
-        for (int i=a; i<=b; i++)
+        for (int i=a; i<b; i++)
             board[i] = 1;
 
-        for (int i=c; i<=d; i++)
+        for (int i=c; i<d; i++)
             board[i] = 1;
 
         int cnt = 0;
@@ -23,7 +23,7 @@ public class Main {
             if (board[i] == 1)
                 cnt++;
 
-        System.out.println(cnt-1);
+        System.out.println(cnt);
 
     }
 }
