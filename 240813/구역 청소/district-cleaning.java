@@ -1,32 +1,34 @@
 import java.util.Scanner;
+
 public class Main {
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int MAX=100;
-        // 0~100
-        // 0~100
-        int[] board = new int[MAX+1];
 
         int a = sc.nextInt();
         int b = sc.nextInt();
-
         int c = sc.nextInt();
         int d = sc.nextInt();
 
         sc.close();
 
-        for (int i=a; i<b; i++)
-            board[i+1] = 1;
-
-        for (int i=c; i<d; i++)
-            board[i+1] = 1;
-
-        int cnt = 0;
-        for (int i=0; i<=MAX; i++)
-            if (board[i] == 1)
-                cnt++;
-
-        System.out.println(cnt);
-
+        if(intersecting(a, b, c, d)) 
+            System.out.print(Math.max(b, d) - Math.min(a, c));
+        
+        else 
+            System.out.print((b - a) + (d - c));
+        
     }
+
+    public static boolean intersecting(int x1, int x2, int x3, int x4) {
+
+        // 겹치지 않는 경우
+        if(x2 < x3 || x4 < x1)
+            return false;
+            
+        // 나머지는 전부 겹치는 경우
+        else
+            return true;
+    }
+
 }
