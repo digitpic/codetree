@@ -6,7 +6,7 @@ public class Main {
         final int INT_MAX = Integer.MAX_VALUE;
 
         int x1, x2;
-        int maxX1, int minX2 = INT_MAX;
+        int maxX1, minX2 = INT_MAX;
 
         Scanner sc = new Scanner(System.in);
 
