@@ -16,7 +16,7 @@ public class Main {
 
             // 속도 증가
             if ((meter + speed + 1) <= x && 
-                (x - (meter + speed + 1)) >= (speed + 1) * (speed + 1) / 2) {
+                (x - (meter + speed + 1)) >= (speed + 1) * (speed + 2) / 2) {
                 speed++;
             }
 
