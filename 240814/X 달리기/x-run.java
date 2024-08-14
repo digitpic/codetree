@@ -1,7 +1,6 @@
 import java.util.Scanner;
-public class Main {
 
-    public static int MAX_X = 10000;
+public class Main {
 
     public static void main(String[] args) {
         
@@ -11,28 +10,29 @@ public class Main {
         int speed = 0, meter = 0, time = 0;
 
         while (meter < x) {
+
+            // 시간 증가
             time++;
 
-            // x 만큼 이동했을 때
-            if (meter == x) {
-                // 무한반복문 탈출
-                break;
+            // 속도 증가
+            if ((meter + speed + 1) <= x && 
+                (x - (meter + speed + 1)) >= (speed + 1) * (speed + 1) / 2) {
+                speed++;
             }
 
-            // 한계에 이르렀을 때
-            if (meter >= x/2) {
-                // 속도가 1이라면
-                if (speed == 1) {
-                    // 현재 상태 유지
-                    continue;
-                }
-                    
-                // 속도 감소
+            // 속도 유지
+            else if ((meter + speed) < x &&
+                (x - (meter + speed)) >= (speed * (speed - 1)) / 2) {
+                
+            }
+
+            // 속도 감소
+            else {
                 speed--;
             }
 
+            // 이동
             meter += speed;
-            speed++;
 
         }
         
