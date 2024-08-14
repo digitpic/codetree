@@ -10,7 +10,7 @@ public class Main {
 
         int n = sc.nextInt();
 
-        // 펭귄들의 현재 위치
+        // 비둘기들의 현재 위치
         // 0 ~ 9
         int[] pos = new int[MAX_PIGEON];
 
@@ -18,7 +18,7 @@ public class Main {
         for (int i=0; i<MAX_PIGEON; i++)
             pos[i] = UNDEFINED;
 
-        // 입력된 펭귄 번호 저장을 위함
+        // 입력된 비둘기 번호 저장을 위함
         int[] pigeon = new int[n];
 
         // 입력된 위치 정보 저장을 위함
