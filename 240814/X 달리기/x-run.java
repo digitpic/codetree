@@ -20,7 +20,7 @@ public class Main {
             }
 
             // 한계에 이르렀을 때
-            if (meter > x/2) {
+            if (meter >= x/2) {
                 // 속도가 1이라면
                 if (speed == 1) {
                     // 현재 상태 유지
