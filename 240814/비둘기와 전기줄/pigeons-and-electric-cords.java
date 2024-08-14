@@ -18,7 +18,7 @@ public class Main {
             moveDir[i] = sc.nextInt();
         }
 
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < n; i++)
             pos[i] = UNDEFINED;
         
         int moveCnt = 0;
