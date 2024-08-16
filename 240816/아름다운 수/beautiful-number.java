@@ -30,9 +30,11 @@ public class Main {
         }
         
         for(int i = 1; i <= 4; i++) {
+
             numList.add(i);
             countBeautifulSeq(cnt + 1);
             numList.remove(numList.size() - 1);
+
         }
 
     }
@@ -50,6 +52,7 @@ public class Main {
         }
 
         return true;
+        
     }
 
 }
