@@ -53,9 +53,9 @@ public class Main {
             if(n <= i + numList.get(i) - 1)
                 return false;
 
-            // 숫자 개수 검증
+            // 아름다운 수 검증
             for(int j = i; j < i + numList.get(i); j++)
-                if(numList.get(j) != numList.get(i))
+                if(numList.get(i) != numList.get(j))
                     return false;
         }
 
