@@ -4,8 +4,8 @@ import java.util.ArrayList;
 public class Main {
 
     static int n;
-    static int ans;
     static ArrayList<Integer> numList = new ArrayList<>();
+    static int ans;
     
     public static void main(String[] args) {
 
@@ -15,6 +15,7 @@ public class Main {
         countBeautifulSeq(0);
         
         System.out.print(ans);
+
     }
 
     public static void countBeautifulSeq(int cnt) {
