@@ -9,7 +9,7 @@ public class Main {
     static ArrayList<Line> lineList = new ArrayList<>();
 
     static int n;
-    static int ans = Integer.MIN_VALUE;
+    static int ans;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -21,7 +21,6 @@ public class Main {
         for (int i=0; i<n; i++) {
             int x1 = sc.nextInt();
             int x2 = sc.nextInt();
-
             lines[i] = new Line(x1, x2);
         }
 
@@ -33,43 +32,34 @@ public class Main {
     }
 
     static void getMaxDuplication(int cnt) {
-        
         // 다 돌았다면
         if (cnt == n) {
-            // 겹치지 않고 뽑을 수 있는 선분 개수 계산
-            int max = 0;
-            for (int i=0; i<n; i++) {
-                for (int j=i+1; j<n; j++) {
-                    // 겹치지 않는다면
-                    if (!isOverlapped(lineList.get(i), lineList.get(j))) {
-                        // 겹치지 않는 선분 개수 추가
-                        max++;
-                    }
-                }
+            // 겹치는 선분이 없는 경우에만 진행
+            if (anyDup()) {
+                // 겹치지 않는 선분의 길이 계산
+                ans = Math.max(ans, lineList.size());
+                // 퇴각
+                return;
             }
-
-            // 현재 기준 겹치는 선분의 최대 개수 ans 에 저장
-            ans = Math.max(ans, max);
-
-            // 퇴각
-            return;
         }
-        
-        // n
-        for (int i=0; i<n; i++) {
-            lineList.add(lines[i]);
-            getMaxDuplication(cnt+1);
-            lineList.remove(lineList.size()-1);
-        }
+        lineList.add(lines[cnt]);
+        getMaxDuplication(cnt+1);
+        lineList.remove(lineList.size()-1);
+    }
 
+    static boolean anyDup() {
+        for (int i=0; i<lineList.size(); i++) 
+                for (int j=i+1; j<lineList.size(); j++) {
+                    // 하나라도 겹친다면
+                    if (isOverlapped(lineList.get(i), lineList.get(j))) 
+                        return false;
+                }
+            return true;
     }
 
     static boolean isOverlapped(Line line1, Line line2) {
-        // 겹치지 않는 경우
         if (line1.x2 < line2.x1 || line2.x2 < line1.x1)
             return false;
-        
-        // 나머지는 겹치는 경우
         return true;
     }
 
