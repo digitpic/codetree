@@ -1,74 +1,84 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 
-class Pair { 
-    int x, y;
-    public Pair(int x, int y) { 
-        this.x = x; 
-        this.y = y; 
-    } 
-}
-
 public class Main {
-    public static final int MAX_N = 15;
-    
-    public static int n;
-    public static Pair[] segments = new Pair[MAX_N];
-    
-    public static int ans;
-    public static ArrayList<Pair> selectedSegs = new ArrayList<>();
-    
-    public static boolean overlapped(Pair seg1, Pair seg2) {
-        int ax1 = seg1.x;
-        int ax2 = seg1.y;
 
-        int bx1 = seg2.x;
-        int bx2 = seg2.y;
-    
-        // 두 선분이 겹치는지 여부는
-        // 한 점이 다른 선분에 포함되는 경우로 판단 가능합니다. 
-        return (ax1 <= bx1 && bx1 <= ax2) || (ax1 <= bx2 && bx2 <= ax2) ||
-               (bx1 <= ax1 && ax1 <= bx2) || (bx1 <= ax2 && ax2 <= bx2);
-    }
-    
-    public static boolean possible() {
-        // 단 한쌍이라도 선분끼리 겹치면 안됩니다.
-        for(int i = 0; i < (int)selectedSegs.size(); i++)
-            for(int j = i + 1; j < (int)selectedSegs.size(); j++)
-                if(overlapped(selectedSegs.get(i), selectedSegs.get(j)))
-                    return false;
-    
-        return true;
-    }
-    
-    public static void findMaxSegments(int cnt) {
-        if(cnt == n) {
-            if(possible())
-                ans = Math.max(ans, (int) selectedSegs.size());
-            return;
-        }
+    static final int MAX_N = 15;
 
-        findMaxSegments(cnt + 1);
-        selectedSegs.add(segments[cnt]);
-        findMaxSegments(cnt + 1);
-        selectedSegs.remove(selectedSegs.size() - 1);
-    }
+    static int n;
+    static Line[] lines = new Line[MAX_N];
+
+    static int ans;
+    static ArrayList<Line> lineList = new ArrayList<>();
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
+        // 선분의 개수 입력 받기
         n = sc.nextInt();
 
         for(int i = 0; i < n; i++)
-            segments[i] = new Pair(0, 0);
+            lines[i] = new Line(0, 0);
         
-        for(int i = 0; i < n; i++) {
+        // 선분의 시작 좌표, 끝 좌표 입력 받기
+        for (int i=0; i<n; i++) {
             int x1 = sc.nextInt();
             int x2 = sc.nextInt();
-            segments[i] = new Pair(x1, x2);
+            lines[i] = new Line(x1, x2);
         }
 
-        findMaxSegments(0);
+        // 겹치는 선분의 최대 값 구하기
+        getMaxDuplication(0);
+
+        // 겹치는 선분의 최대 값 출력
+        System.out.println(ans);
+    }
+
+    static void getMaxDuplication(int cnt) {
+        // 다 돌았다면
+        if (cnt == n) {
+            // 겹치는 선분이 없는 경우에만 진행
+            if (anyDup()) {
+                // 겹치지 않는 선분의 길이 계산
+                ans = Math.max(ans, lineList.size());
+                // 퇴각
+                return;
+            }
+        }
         
-        System.out.print(ans);
+        lineList.add(lines[cnt]);
+        getMaxDuplication(cnt+1);
+        lineList.remove(lineList.size()-1);
+        getMaxDuplication(cnt+1);
+    }
+
+    static boolean anyDup() {
+        for (int i=0; i<lineList.size(); i++) {
+            for (int j=i+1; j<lineList.size(); j++) {
+                // 하나라도 겹친다면
+                if (isOverlapped(lineList.get(i), lineList.get(j))) {
+                    return false;
+                }
+            }
+        }
+            
+        return true;
+    }
+
+    static boolean isOverlapped(Line line1, Line line2) {
+        if (line1.x2 < line2.x1 || line2.x2 < line1.x1)
+            return false;
+        return true;
+    }
+
+}
+
+class Line {
+    int x1;
+    int x2;
+
+    public Line(int x1, int x2) {
+        this.x1 = x1;
+        this.x2 = x2;
     }
 }
