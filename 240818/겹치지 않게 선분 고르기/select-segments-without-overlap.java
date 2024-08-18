@@ -37,10 +37,6 @@ public class Main {
         // 다 돌았다면
         if (cnt == n) {
             // 겹치지 않고 뽑을 수 있는 선분 개수 계산
-            if (n == 1) {
-                ans = 1;
-                return;
-            }
             int max = 0;
             for (int i=0; i<n; i++) {
                 for (int j=i+1; j<n; j++) {
