@@ -8,8 +8,8 @@ public class Main {
     private static List<Integer> numbers = new ArrayList<>();
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        n = sc.nextInt();
+        Scanner scanner = new Scanner(System.in);
+        n = scanner.nextInt();
         find(0);
         System.out.println(answer);
     }
