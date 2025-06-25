@@ -2,7 +2,6 @@ import java.util.*;
 import java.io.*;
 
 public class Main {
-
     private static final int MAX = 25;
 
     private static int n;
@@ -35,7 +34,7 @@ public class Main {
                 }
             }
         }
-        
+
         Collections.sort(peopleNumbers);
 
         System.out.println(peopleNumbers.size());
