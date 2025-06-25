@@ -29,12 +29,13 @@ public class Main {
                 if (isMovable(row, column)) {
                     visited[row][column] = true;
                     peopleNumber = 1;
-                    
+
                     dfs(row, column);
                     peopleNumbers.add(peopleNumber);
                 }
             }
         }
+        
         Collections.sort(peopleNumbers);
 
         System.out.println(peopleNumbers.size());
