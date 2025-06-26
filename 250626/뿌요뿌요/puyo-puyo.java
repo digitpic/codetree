@@ -51,9 +51,10 @@ public class Main {
             if (isMovable(x, y, newX, newY)) {
                 visited[newX][newY] = 1;
                 count++;
-                max = Math.max(count, max);
                 find(newX, newY);
             }
+            
+            max = Math.max(count, max);
         }
     }
 
