@@ -23,7 +23,27 @@ public class Main {
     private static int count;
 
     public static void main(String[] args) throws IOException {
-        input();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer tokens = new StringTokenizer(reader.readLine());
+
+        n = Integer.parseInt(tokens.nextToken());
+        k = Integer.parseInt(tokens.nextToken());
+
+        grid = new int[n][n];
+
+        for (int row = 0; row < n; row++) {
+            tokens = new StringTokenizer(reader.readLine());
+            for (int column = 0; column < n; column++) {
+                grid[row][column] = Integer.parseInt(tokens.nextToken());
+            }
+        }
+
+        starts = new int[k][2];
+        for (int row = 0; row < k; row++) {
+            tokens = new StringTokenizer(reader.readLine());
+            starts[row][0] = Integer.parseInt(tokens.nextToken()) - 1;
+            starts[row][1] = Integer.parseInt(tokens.nextToken()) - 1;
+        }
 
         for (int row = 0; row < k; row++) {
             push(starts[row][0], starts[row][1]);
@@ -32,7 +52,7 @@ public class Main {
 
         bfs();
 
-        output();
+        System.out.println(count);
     }
 
     private static void push(int x, int y) {
@@ -69,33 +89,5 @@ public class Main {
 
     private static boolean isInRange(int x, int y) {
         return 0 <= x && x < n && 0 <= y && y < n;
-    }
-
-    private static void input() throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer tokens = new StringTokenizer(reader.readLine());
-
-        n = Integer.parseInt(tokens.nextToken());
-        k = Integer.parseInt(tokens.nextToken());
-
-        grid = new int[n][n];
-
-        for (int row = 0; row < n; row++) {
-            tokens = new StringTokenizer(reader.readLine());
-            for (int column = 0; column < n; column++) {
-                grid[row][column] = Integer.parseInt(tokens.nextToken());
-            }
-        }
-
-        starts = new int[k][2];
-        for (int row = 0; row < k; row++) {
-            tokens = new StringTokenizer(reader.readLine());
-            starts[row][0] = Integer.parseInt(tokens.nextToken()) - 1;
-            starts[row][1] = Integer.parseInt(tokens.nextToken()) - 1;
-        }
-    }
-
-    private static void output() {
-        System.out.println(count);
     }
 }
