@@ -30,6 +30,7 @@ public class Main {
                     visited[row][column] = 1;
                     count = 1;
                     find(row, column);
+                    max = Math.max(count, max);
                     if (4 <= count) {
                         bombed++;
                     }
@@ -53,8 +54,6 @@ public class Main {
                 count++;
                 find(newX, newY);
             }
-            
-            max = Math.max(count, max);
         }
     }
 
