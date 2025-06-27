@@ -16,11 +16,9 @@ public class Main {
     
     private static int n;
     private static int m;
-
     private static int[][] grid = new int[MAX][MAX];
-    private static int[][] steps = new int[MAX][MAX];
     private static int[][] visited = new int[MAX][MAX];
-
+    private static int[][] steps = new int[MAX][MAX];
     private static Queue<Pair> queue = new LinkedList<>();
     private static int answer = Integer.MAX_VALUE;
 
