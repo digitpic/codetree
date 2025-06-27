@@ -11,7 +11,6 @@ class Pair {
     }
 }
 
-
 public class Main {
     private static final int MAX = 100;
 
