@@ -45,6 +45,12 @@ public class Main {
         System.out.println(answer);
     }
 
+    private static void push(int x, int y, int step) {
+        queue.add(new Pair(x, y));
+        visited[x][y] = 1;
+        steps[x][y] = step;
+    }
+
     private static void find() {
         while (!queue.isEmpty()) {
             Pair current = queue.poll();
@@ -67,12 +73,6 @@ public class Main {
         if (visited[n - 1][m - 1] == 1) {
             answer = steps[n - 1][m - 1];
         }
-    }
-
-    private static void push(int x, int y, int step) {
-        queue.add(new Pair(x, y));
-        visited[x][y] = 1;
-        steps[x][y] = step;
     }
  
     private static boolean isMovable(int x, int y) {
