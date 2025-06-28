@@ -20,7 +20,7 @@ public class Main {
 
         find();
 
-        System.out.println(dp[n]);
+        System.out.println(dp[n] % 10_007);
     }
 
     private static void find() {
