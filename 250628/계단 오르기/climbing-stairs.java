@@ -20,12 +20,12 @@ public class Main {
 
         find();
 
-        System.out.println(dp[n] % 10_007);
+        System.out.println(dp[n]);
     }
 
     private static void find() {
         for (int i = 4; i <= n; i++) {
-            dp[i] = dp[i - 2] + dp[i - 3];
+            dp[i] = (dp[i - 2] + dp[i - 3]) % 10_007;
         }
     }
 }
