@@ -48,7 +48,7 @@ public class Main {
             return;
         }
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 1; i <= 3; i++) {
             int x = positions.get(count).x;
             int y = positions.get(count).y;
 
@@ -87,6 +87,7 @@ public class Main {
 
     private static void bomb(int x, int y, int type) {
         Pair[][] shapes = {
+            {},
             {new Pair(-2, 0), new Pair(-1, 0), new Pair(0, 0), new Pair(1, 0), new Pair(2, 0)},
             {new Pair(0, 1), new Pair(1, 0), new Pair (0, 0), new Pair(0, -1), new Pair(-1, 0)},
             {new Pair(-1, -1), new Pair(-1, 1), new Pair(0, 0), new Pair(1, -1), new Pair(1, 1)},
