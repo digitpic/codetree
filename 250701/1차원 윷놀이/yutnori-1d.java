@@ -42,10 +42,6 @@ public class Main {
         }
 
         for (int i = 0; i < k; i++) {
-            if (status[i] >= m) {
-                continue;
-            }
-
             status[i] += moves[count];
             find(count + 1);
             status[i] -= moves[count];
