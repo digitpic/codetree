@@ -36,8 +36,8 @@ public class Main {
     }
 
     private static void find(int count) {
+        max = Math.max(max, calculate());
         if (count == n) {
-            max = Math.max(max, calculate());
             return;
         }
 
