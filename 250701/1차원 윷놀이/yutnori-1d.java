@@ -27,7 +27,7 @@ public class Main {
         }
 
         for (int i = 0; i < k; i++) {
-            status[i]++;
+            status[i] = 1;
         }
 
         find(0);
