@@ -41,13 +41,13 @@ public class Main {
     }
 
     private static void find(int index, int count) {
-        if (index == n) {
-            if (count == m) {
-                max = Integer.MIN_VALUE;
-                findPair(0, 0);
-                min = Math.min(min, max);
-            }
+        if (count == m) {
+            max = Integer.MIN_VALUE;
+            findPair(0, 0);
+            min = Math.min(min, max);
+        }
 
+        if (index == n) {
             return;
         }
 
@@ -59,12 +59,13 @@ public class Main {
     }
 
     private static void findPair(int index, int count) {
+        if (count == 2) {
+            Pair first = pair.get(0);
+            Pair second = pair.get(1);
+            max = Math.max(max, calculate(first, second));
+        }
+        
         if (index == m) {
-            if (count == 2) {
-                Pair first = pair.get(0);
-                Pair second = pair.get(1);
-                max = Math.max(max, calculate(first, second));
-            }
             return;
         }
         
