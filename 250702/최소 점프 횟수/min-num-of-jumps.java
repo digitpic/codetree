@@ -33,10 +33,6 @@ public class Main {
             min = Math.min(min, count);
             return;
         }
-        
-        if (jumps[position] == 0) {
-            return;
-        }
 
         for (int j = 1; j <= jumps[position]; j++) {
             find(position + j, count + 1);
