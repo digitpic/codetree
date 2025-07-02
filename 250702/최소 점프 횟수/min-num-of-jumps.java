@@ -25,7 +25,7 @@ public class Main {
     }
 
     private static void find(int count) {
-        if (count == n) {            
+        if (count == n || step >= n) {            
             min = Math.min(min, step);
             return;
         }
@@ -33,15 +33,15 @@ public class Main {
         for (int i = 0; i < n; i++) {
             if (jumps[i] == 0) {
                 min = -1;
-                return;
+                continue;
             }
-
+            
             step = 1;
             
             for (int j = 1; j <= jumps[i]; j++) {
-                step += jumps[i];
+                step += j;
                 find(count + 1);
-                step -= jumps[i];
+                step -= j;
             }
         }
     }
