@@ -19,7 +19,7 @@ public class Main {
     }
 
     private static void find(int count, int previous) {
-        if (numbers.size() == m) {
+        if (count == m) {
             for (int i = 0; i < numbers.size(); i++) {
                 System.out.print(numbers.get(i) + " ");
             }
