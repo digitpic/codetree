@@ -45,6 +45,7 @@ public class Main {
             max = Integer.MIN_VALUE;
             findPair(0, 0);
             min = Math.min(min, max);
+            return;
         }
 
         if (index == n) {
@@ -63,8 +64,9 @@ public class Main {
             Pair first = pair.get(0);
             Pair second = pair.get(1);
             max = Math.max(max, calculate(first, second));
+            return;
         }
-        
+
         if (index == m) {
             return;
         }
