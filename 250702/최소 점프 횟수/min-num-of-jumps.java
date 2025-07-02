@@ -35,7 +35,7 @@ public class Main {
         }
         
         if (jumps[position] == 0) {
-                return;
+            return;
         }
 
         for (int j = 1; j <= jumps[position]; j++) {
