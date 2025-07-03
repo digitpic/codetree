@@ -58,7 +58,7 @@ public class Main {
                 push(picked.get(index).x, picked.get(index).y);
             }
 
-            findRange();
+            countRange();
             max = Math.max(max, range);
 
             return;
@@ -79,7 +79,7 @@ public class Main {
         range++;
     }
 
-    private static void findRange() {
+    private static void countRange() {
         int[] dx = new int[]{0, 1, 0, -1};
         int[] dy = new int[]{1, 0, -1, 0};
 
