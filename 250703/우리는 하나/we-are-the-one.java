@@ -54,18 +54,19 @@ public class Main {
             visited = new int[MAX][MAX];
             range = 0;
             
-            for (int i = 0; i < k; i++) {
-                push(picked.get(i).x, picked.get(i).y);
+            for (int index = 0; index < k; index++) {
+                push(picked.get(index).x, picked.get(index).y);
             }
 
             findRange();
-            max = Math.max(max, range);    
+            max = Math.max(max, range);
+
             return;
         }
 
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                picked.add(new Pair(i, j));
+        for (int row = 0; row < n; row++) {
+            for (int column = 0; column < n; column++) {
+                picked.add(new Pair(row, column));
                 findStartPoint(count + 1);
                 picked.remove(picked.size() - 1);
             }
@@ -87,9 +88,9 @@ public class Main {
             int x = current.x;
             int y = current.y;
 
-            for (int direction = 0; direction < DIRECTION_NUMBER; direction++) {
-                int nx = x + dx[direction];
-                int ny = y + dy[direction];
+            for (int index = 0; index < DIRECTION_NUMBER; index++) {
+                int nx = x + dx[index];
+                int ny = y + dy[index];
                 
                 if (isInRange(nx, ny)) {
                     int difference = Math.abs(grid[x][y] - grid[nx][ny]);
