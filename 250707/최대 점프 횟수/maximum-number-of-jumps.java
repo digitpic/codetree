@@ -11,7 +11,6 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer tokens = new StringTokenizer(reader.readLine());
-
         n = Integer.parseInt(tokens.nextToken());
 
         tokens = new StringTokenizer(reader.readLine());
@@ -26,6 +25,10 @@ public class Main {
         dp[0] = 0;
         for (int i = 1; i < n; i++) {
             for (int j = 0; j < i; j++) {
+                if (dp[j] == -1) {
+                    continue;
+                }
+
                 if (j + numbers[j] >= i) {
                     dp[i] = Math.max(dp[i], dp[j] + 1);
                 }
@@ -33,7 +36,7 @@ public class Main {
         }
 
         int max = 0;
-        for (int i = 0; i < n; i++) {
+        for (int i = 1; i <= n; i++) {
             max = Math.max(max, dp[i]);
         }
 
