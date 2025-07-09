@@ -13,7 +13,6 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer tokens = new StringTokenizer(reader.readLine());
-
         n = Integer.parseInt(tokens.nextToken());
 
         for (int i = 0; i < n; i++) {
@@ -28,9 +27,9 @@ public class Main {
             for (int j = 0; j < i; j++) {
                 if (isOverlap(i, j)) {
                     dp[i] = Math.max(dp[i], payment[i]);
-                } else {
-                    dp[i] = Math.max(dp[i], dp[j] + payment[i]);
-                }   
+                    continue;
+                } 
+                dp[i] = Math.max(dp[i], dp[j] + payment[i]);  
             }
         }
 
