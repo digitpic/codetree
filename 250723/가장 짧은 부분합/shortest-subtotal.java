@@ -20,9 +20,10 @@ public class Main {
             int sum = 0;
             for (int j = i; j < n; j++) {
                 sum += numbers[j]; 
-                if (sum >= s) {
-                    min = Math.min(min, j - i + 1);
+                if (sum < s) {
+                    continue;
                 }
+                min = Math.min(min, j - i + 1);
             }
         }
 
