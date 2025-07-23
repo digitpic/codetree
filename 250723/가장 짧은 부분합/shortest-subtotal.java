@@ -15,15 +15,16 @@ public class Main {
             numbers[i] = Integer.parseInt(tokens.nextToken());
         }
 
+        int sum = 0;
+        int left = 0;
         int min = Integer.MAX_VALUE;
-        for (int i = 0; i < n; i++) {
-            int sum = 0;
-            for (int j = i; j < n; j++) {
-                sum += numbers[j]; 
-                if (sum >= s) {
-                    min = Math.min(min, j - i + 1);
-                    break;
-                }
+        
+        for (int right = 0; right < n; right++) {
+            sum += numbers[right];
+
+            while (sum >= s) {
+                min = Math.min(min, right - left + 1);
+                sum -= numbers[left++];
             }
         }
 
