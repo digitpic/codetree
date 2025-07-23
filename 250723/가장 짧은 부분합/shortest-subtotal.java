@@ -24,7 +24,8 @@ public class Main {
 
             while (sum >= s) {
                 min = Math.min(min, right - left + 1);
-                sum -= numbers[left++];
+                sum -= numbers[left];
+                left++;
             }
         }
 
