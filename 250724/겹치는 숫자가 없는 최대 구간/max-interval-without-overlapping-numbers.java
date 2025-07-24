@@ -2,13 +2,15 @@ import java.util.*;
 import java.io.*;
 
 public class Main {
+    private static int MAX = 100_000;
+    private static int n;
+    private static int[] numbers = new int[MAX + 1];
+    private static int[] count = new int[MAX + 1];
+
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer tokens = new StringTokenizer(reader.readLine());
-
-        int n = Integer.parseInt(tokens.nextToken());
-        int[] numbers = new int[n + 1];
-        int[] count = new int[n + 1];
+        n = Integer.parseInt(tokens.nextToken());
 
         tokens = new StringTokenizer(reader.readLine());
         for (int i = 1; i <= n; i++) {
