@@ -28,11 +28,12 @@ public class Main {
                 count[numbers[right + 1]]++;
                 right++;
             }
-            
-            if (count[1] >= k) {
-                min = Math.min(min, right - left + 1);
+
+            if (count[1] < k) {
+                break;
             }
             
+            min = Math.min(min, right - left + 1);
             count[numbers[left]]--;
         }
         
