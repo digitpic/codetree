@@ -30,9 +30,7 @@ public class Main {
             graph[u][v] = w;
         }
 
-        for (int i = 1; i <= n; i++) {
-            distance[i] = INF;
-        }
+        Arrays.fill(distance, INF);
         distance[1] = 0;
 
         dijkstra();
