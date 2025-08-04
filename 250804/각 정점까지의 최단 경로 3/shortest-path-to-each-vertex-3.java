@@ -4,6 +4,7 @@ import java.io.*;
 public class Main {
 
     private static int MAX = 100;
+    private static int INF = (int)1e9;
 
     private static int n;
     private static int m;
@@ -30,14 +31,14 @@ public class Main {
         }
 
         for (int i = 1; i <= n; i++) {
-            distance[i] = (int)1e9;
+            distance[i] = INF;
         }
         distance[1] = 0;
 
         dijkstra();
 
         for (int i = 2; i <= n; i++) {  
-            System.out.println(distance[i] == (int)1e9 ? -1 : distance[i] + " ");
+            System.out.println(distance[i] == INF ? -1 : distance[i] + " ");
         }
     }
 
