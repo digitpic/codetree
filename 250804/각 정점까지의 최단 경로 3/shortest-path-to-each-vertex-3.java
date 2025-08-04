@@ -37,7 +37,7 @@ public class Main {
         dijkstra();
 
         for (int i = 2; i <= n; i++) {  
-            System.out.println(distance[i] + " ");
+            System.out.println(distance[i] == (int)1e9 ? -1 : distance[i] + " ");
         }
     }
 
