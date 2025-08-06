@@ -9,16 +9,19 @@ public class Main {
         for (int i = 0; i < n; i++) {
             a[i] = sc.nextInt();
         }
-        long sum = 0;
+
+        int sum = 0;
+        int max = Integer.MIN_VALUE;
         for (int i = 0; i < n; i++) {
-            if (sum + a[i] >= 0) {
-                sum += a[i];
-            } else {
+            if (sum < 0) {
                 sum = a[i];
+            } else {
+                sum += a[i];
             }
+            max = Math.max(max, sum);
         }
 
-        System.out.println(sum);
+        System.out.println(max);
     }
 
 }
