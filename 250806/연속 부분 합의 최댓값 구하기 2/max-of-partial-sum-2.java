@@ -9,7 +9,7 @@ public class Main {
         for (int i = 0; i < n; i++) {
             a[i] = sc.nextInt();
         }
-        int sum = 0;
+        long sum = 0;
         for (int i = 0; i < n; i++) {
             if (sum + a[i] >= 0) {
                 sum += a[i];
